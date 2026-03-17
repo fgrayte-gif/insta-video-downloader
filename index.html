@@ -3,27 +3,37 @@
 <head>
   <title>Instagram Downloader</title>
 </head>
-<body style="text-align:center; padding:50px;">
+
+<body style="text-align:center; padding:50px; font-family:sans-serif;">
+
   <h1>🔥 Instagram Downloader</h1>
 
-  <input id="url" placeholder="Paste Instagram link" style="width:300px; padding:10px;">
-  <br><br>
-  <button onclick="download()">Download</button>
+  <input 
+    id="url" 
+    placeholder="Paste Instagram link" 
+    style="width:300px; padding:10px;"
+  >
 
-  <p id="result"></p>
+  <br><br>
+
+  <button onclick="download()" style="padding:10px 20px;">
+    Download
+  </button>
 
   <script>
     function download() {
       let link = document.getElementById("url").value;
 
       if (!link) {
-        alert("Enter link");
+        alert("Enter link first");
         return;
       }
 
-      document.getElementById("result").innerHTML =
-        "Processing... (Real download backend needed)";
+      // Redirect to real downloader
+      window.location.href =
+        "https://snapinsta.app/?url=" + encodeURIComponent(link);
     }
   </script>
+
 </body>
 </html>
