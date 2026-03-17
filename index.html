@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Instagram Downloader</title>
+  <title>Instagram video Downloader</title>
 </head>
 
 <body style="text-align:center; padding:50px; font-family:sans-serif;">
@@ -10,28 +10,35 @@
 
   <input 
     id="url" 
-    placeholder="Paste Instagram link" 
-    style="width:300px; padding:10px;"
+    placeholder="Paste Instagram link here..."
+    style="width:300px; padding:10px; font-size:16px;"
   >
 
   <br><br>
 
-  <button onclick="download()" style="padding:10px 20px;">
+  <button onclick="download()" style="padding:10px 20px; font-size:16px; cursor:pointer;">
     Download
   </button>
 
   <script>
     function download() {
-      let link = document.getElementById("url").value;
+      let link = document.getElementById("url").value.trim();
 
+      // Check empty input
       if (!link) {
-        alert("Enter link first");
+        alert("Please enter Instagram link");
         return;
       }
 
-      // Redirect to real downloader
+      // Basic validation (optional but good)
+      if (!link.includes("instagram.com")) {
+        alert("Enter valid Instagram link");
+        return;
+      }
+
+      // FINAL WORKING REDIRECT (FIXED)
       window.location.href =
-        "https://snapinsta.app/?url=" + encodeURIComponent(link);
+        "https://snapinsta.app/en?url=" + encodeURIComponent(link);
     }
   </script>
 
