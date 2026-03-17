@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Instagram Downloader</title>
+</head>
+<body style="text-align:center; padding:50px;">
+  <h1>🔥 Instagram Downloader</h1>
+
+  <input id="url" placeholder="Paste Instagram link" style="width:300px; padding:10px;">
+  <br><br>
+  <button onclick="download()">Download</button>
+
+  <p id="result"></p>
+
+  <script>
+    function download() {
+      let link = document.getElementById("url").value;
+
+      if (!link) {
+        alert("Enter link");
+        return;
+      }
+
+      document.getElementById("result").innerHTML =
+        "Processing... (Real download backend needed)";
+    }
+  </script>
+</body>
+</html>
